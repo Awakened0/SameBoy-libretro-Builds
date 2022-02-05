@@ -1,6 +1,6 @@
 name: SameBoy-libretro Builds
-#on:
- # workflow_dispatch:
+on:
+  workflow_dispatch:
 jobs:
   Windows:
     name: Build SameBoy-libretro
