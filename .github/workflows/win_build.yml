@@ -1,0 +1,51 @@
+name: SameBoy-libretro Builds
+on:
+  workflow_dispatch:
+jobs:
+  Windows:
+    name: Build SameBoy-libretro
+    runs-on: windows-latest
+    steps:
+    - uses: msys2/setup-msys2@v2
+      with:
+        update: true
+        install: >-
+          base-devel
+          git
+          wget
+          make
+          mingw-w64-x86_64-toolchain
+          mingw-w64-x86_64-ntldd
+          mingw-w64-x86_64-zlib
+          mingw-w64-x86_64-pkg-config
+          bison
+          unzip
+          p7zip
+    - shell: msys2 {0}
+      run: |
+        cd `mktemp -d`
+        curl -L https://github.com/rednex/rgbds/archive/v0.4.0.zip > rgbds.zip
+        unzip rgbds.zip
+        cd rgbds-*
+        make -sj
+        sudo make install
+        cd ..
+        rm -rf *
+    - uses: actions/checkout@v2
+    - name: Fetch the source
+      run: git clone https://github.com/LIJI32/SameBoy
+    - shell: msys2 {0}
+      working-directory: SameBoy
+      run: |
+        make libretro -j8
+    - name: Zip .dll
+      working-directory: SameBoy/build/bin
+      run: 7z a -mx=9 SameBoy-Win-x86_64.7z *.dll
+    - name: Upload 7z
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: SameBoy/build/bin/SameBoy-Win-x86_64.7z
+        tag: Main
+        asset_name: SameBoy-Win-x86_64.7z
+        overwrite: true
