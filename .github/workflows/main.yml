@@ -30,7 +30,6 @@ jobs:
         make -sj
         sudo make install
         cd ..
-        rm -rf *
     - uses: actions/checkout@v2
     - name: Fetch the source
       run: git clone https://github.com/LIJI32/SameBoy
