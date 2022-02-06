@@ -35,12 +35,12 @@ jobs:
         make libretro -j8
     - name: Zip .dll
       working-directory: SameBoy/build/bin
-      run: 7z a -mx=9 SameBoy-Win-x86_64.7z *.dll
+      run: 7z a -mx=9 SameBoy-libretro-Win-x86_64.7z *.dll
     - name: Upload 7z
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: SameBoy/build/bin/SameBoy-Win-x86_64.7z
+        file: SameBoy/build/bin/SameBoy-libretro-Win-x86_64.7z
         tag: Main
         asset_name: SameBoy-Win-x86_64.7z
         overwrite: true
