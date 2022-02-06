@@ -42,5 +42,5 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: SameBoy/build/bin/SameBoy-libretro-Win-x86_64.7z
         tag: Main
-        asset_name: SameBoy-Win-x86_64.7z
+        asset_name: SameBoy-libretro-Win-x86_64.7z
         overwrite: true
