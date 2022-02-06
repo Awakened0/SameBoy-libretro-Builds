@@ -33,7 +33,8 @@ jobs:
         wget https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/sgb_boot.bin
         mkdir -p build/bin/BootROMs
         mv *.bin build/bin/BootROMs
-        make libretro -j8
+        cd libretro
+        make -j8
     - name: Zip .dll
       working-directory: SameBoy/build/bin
       run: 7z a -mx=9 SameBoy-libretro-Win-x86_64.7z *.dll
