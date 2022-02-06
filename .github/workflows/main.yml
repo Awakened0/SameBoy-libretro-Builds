@@ -32,7 +32,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Fetch the source
       run: git clone https://github.com/LIJI32/SameBoy
-    - name: Build SameBoy
     - shell: msys2 {0}
       working-directory: SameBoy
       run: |
