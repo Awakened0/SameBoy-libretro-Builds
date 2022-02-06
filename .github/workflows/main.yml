@@ -25,11 +25,11 @@ jobs:
     - shell: msys2 {0}
       working-directory: SameBoy
       run: |
-        curl -L https://github.com/libretro/SameBoy/blob/buildbot/BootROMs/prebuilt/agb_boot.bin
-        curl -L https://github.com/libretro/SameBoy/blob/buildbot/BootROMs/prebuilt/cgb_boot.bin
-        curl -L https://github.com/libretro/SameBoy/blob/buildbot/BootROMs/prebuilt/dmg_boot.bin
-        curl -L https://github.com/libretro/SameBoy/blob/buildbot/BootROMs/prebuilt/sgb2_boot.bin
-        curl -L https://github.com/libretro/SameBoy/blob/buildbot/BootROMs/prebuilt/sgb_boot.bin
+        curl -L https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/agb_boot.bin
+        curl -L https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/cgb_boot.bin
+        curl -L https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/dmg_boot.bin
+        curl -L https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/sgb2_boot.bin
+        curl -L https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/sgb_boot.bin
         mkdir -p build/bin/BootROMs
         mv *.bin build/bin/BootROMs
         make libretro -j8
