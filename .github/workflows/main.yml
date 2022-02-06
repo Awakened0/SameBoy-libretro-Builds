@@ -21,6 +21,7 @@ jobs:
           bison
           unzip
           p7zip
+    - name: Install RGBDS
     - shell: msys2 {0}
       run: |
         (
@@ -34,9 +35,10 @@ jobs:
         rm -rf *
         )
         ;;
-    - uses: actions/checkout@v2
     - name: Fetch the source
+    - uses: actions/checkout@v2
       run: git clone https://github.com/LIJI32/SameBoy
+    - name: Build SameBoy
     - shell: msys2 {0}
       working-directory: SameBoy
       run: |
