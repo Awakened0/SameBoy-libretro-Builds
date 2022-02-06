@@ -21,8 +21,8 @@ jobs:
           bison
           unzip
           p7zip
-    - name: Install RGBDS
     - shell: msys2 {0}
+    - name: Install RGBDS
       run: |
         cd `mktemp -d`
         curl -L https://github.com/gbdev/rgbds/releases/download/v0.4.0/rgbds-0.4.0-win64.zip > rgbds.zip
@@ -30,8 +30,8 @@ jobs:
         cd rgbds-*
         mv * /usr/local/bin
         cd ..
-    - name: Fetch the source
     - uses: actions/checkout@v2
+    - name: Fetch the source
       run: git clone https://github.com/LIJI32/SameBoy
     - name: Build SameBoy
     - shell: msys2 {0}
