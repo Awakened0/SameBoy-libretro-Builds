@@ -26,9 +26,7 @@ jobs:
         cd `mktemp -d`
         curl -L https://github.com/gbdev/rgbds/releases/download/v0.4.0/rgbds-0.4.0-win64.zip > rgbds.zip
         unzip rgbds.zip
-        cd rgbds-*
-        mv * /usr/local/bin
-        cd ..
+        mv *.exe *.dll /usr/local/bin
     - uses: actions/checkout@v2
     - name: Fetch the source
       run: git clone https://github.com/LIJI32/SameBoy
