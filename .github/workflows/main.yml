@@ -22,7 +22,6 @@ jobs:
           unzip
           p7zip
     - shell: msys2 {0}
-    - name: Install RGBDS
       run: |
         cd `mktemp -d`
         curl -L https://github.com/gbdev/rgbds/releases/download/v0.4.0/rgbds-0.4.0-win64.zip > rgbds.zip
