@@ -26,7 +26,6 @@ jobs:
         cd `mktemp -d`
         curl -L https://github.com/gbdev/rgbds/releases/download/v0.4.0/rgbds-0.4.0-win64.zip > rgbds.zip
         unzip rgbds.zip
-        cygpath -w /usr/local/bin
         mv *.exe *.dll D:\a\_temp\msys64\usr\local\bin
     - uses: actions/checkout@v2
     - name: Fetch the source
