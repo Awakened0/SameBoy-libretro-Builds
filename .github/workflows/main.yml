@@ -26,11 +26,11 @@ jobs:
     - shell: msys2 {0}
       working-directory: SameBoy
       run: |
-        wget https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/agb_boot.bin
-        wget https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/cgb_boot.bin
-        wget https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/dmg_boot.bin
-        wget https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/sgb2_boot.bin
-        wget https://github.com/libretro/SameBoy/raw/buildbot/BootROMs/prebuilt/sgb_boot.bin
+        wget https://github.com/Awakened0/SameBoy-libretro-Builds/raw/main/prebuilt-BootROMs/agb_boot.bin
+        wget https://github.com/Awakened0/SameBoy-libretro-Builds/raw/main/prebuilt-BootROMs/cgb_boot.bin
+        wget https://github.com/Awakened0/SameBoy-libretro-Builds/raw/main/prebuilt-BootROMs/dmg_boot.bin
+        wget https://github.com/Awakened0/SameBoy-libretro-Builds/raw/main/prebuilt-BootROMs/sgb2_boot.bin
+        wget https://github.com/Awakened0/SameBoy-libretro-Builds/raw/main/prebuilt-BootROMs/sgb_boot.bin
         mkdir -p build/bin/BootROMs
         mv *.bin build/bin/BootROMs
         cd libretro
