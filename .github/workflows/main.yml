@@ -36,7 +36,7 @@ jobs:
         mkdir -p build/bin/BootROMs
         mv *.bin build/bin/BootROMs
         cd libretro
-        make -j8 BOOTROMS_DIR=build/bin/BootROMs
+        make -j8 BOOTROMS_DIR=D:/a/SameBoy-libretro-Builds/SameBoy-libretro-Builds/build/bin/BootROMs
     - name: Zip .dll
       working-directory: SameBoy/build/bin
       run: 7z a -mx=9 SameBoy-libretro-Win-x86_64.7z *.dll
