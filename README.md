@@ -1,3 +1,3 @@
 # SameBoy-libretro-Builds
 
-Windows builds of SameBoy-libretro from upstream using prebuilt BootROMs.
+Windows SameBoy-libretro builds from upstream using prebuilt BootROMs.
