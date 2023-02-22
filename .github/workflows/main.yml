@@ -35,7 +35,6 @@ jobs:
         wget https://github.com/LIJI32/SameBoy/raw/libretro/BootROMs/prebuilt/sgb_boot.bin
         mkdir -p build/bin/BootROMs
         mv *.bin build/bin/BootROMs
-        pwd
         cd libretro
         make -j8 BOOTROMS_DIR=D:/a/SameBoy-libretro-Builds/SameBoy-libretro-Builds/SameBoy/build/bin/BootROMs
     - name: Zip .dll
